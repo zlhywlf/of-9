@@ -1,0 +1,6 @@
+{
+  "C_Cpp.default.defines": ["WM_DP", "NoRepository", "linux64"],
+  "C_Cpp.default.includePath": ["${workspaceFolder}/**"],
+  "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
+  "editor.formatOnSave": true
+}

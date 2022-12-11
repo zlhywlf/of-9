@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "laplacianFoam",
+      "options": {
+        "env": {
+          // Release or Debug
+          "buildType": "Debug",
+          "projectDir": "${workspaceFolder}",
+          "sourceDir": "src/laplacianFoam"
+        }
+      },
+      "command": ["bash", "${workspaceFolder}/scripts/Build.sh"]
+    },
+    {
+      "type": "shell",
+      "label": "buildLib",
+      "options": {
+        "env": {
+          // Release or Debug
+          "buildType": "Debug",
+          "projectDir": "${workspaceFolder}",
+          "sourceDir": "modules"
+        }
+      },
+      "command": ["bash", "${workspaceFolder}/scripts/Build.sh"]
+    }
+  ]
+}

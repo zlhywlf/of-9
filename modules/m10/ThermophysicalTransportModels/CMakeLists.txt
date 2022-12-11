@@ -1,0 +1,29 @@
+cmake_minimum_required(VERSION 3.17)
+
+include(${WORKSPACE}/etc/base.cmake)
+
+project(thermophysicalTransportModels)
+
+add_library(${PROJECT_NAME} SHARED
+thermophysicalTransportModel.C
+temperatureCoupledBase.C
+turbulentTemperatureCoupledBaffleMixedFvPatchScalarField.C
+thermalBaffle1DFvPatchScalarFields.C
+totalFlowRateAdvectiveDiffusiveFvPatchScalarField.C
+turbulentTemperatureRadCoupledMixedFvPatchScalarField.C
+externalWallHeatFluxTemperatureFvPatchScalarField.C
+externalCoupledTemperatureMixedFvPatchScalarField.C
+convectiveHeatTransferFvPatchScalarField.C
+alphatWallFunctionFvPatchScalarField.C
+alphatJayatillekeWallFunctionFvPatchScalarField.C
+fluidThermophysicalTransportModels.C
+)
+
+target_link_libraries(${PROJECT_NAME}
+fluidThermophysicalModels
+solidThermo
+momentumTransportModels
+specie
+finiteVolume
+meshTools
+)
